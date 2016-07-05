@@ -3,7 +3,7 @@ Ansible Role: Atom
 
 [![Build Status](https://travis-ci.org/gantsign/ansible-role-atom.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-atom)
 
-Role to install the atom.io editor.
+Role to install the [atom.io](https://atom.io) text editor by GitHub.
 
 Requirements
 ------------
