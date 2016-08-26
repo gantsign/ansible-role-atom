@@ -20,7 +20,7 @@ Example Playbook
      - { role: gantsign.atom }
 ```
 
-More roles from GantSign
+More Roles From GantSign
 ------------------------
 
 You can find more roles from GantSign on [Ansible Galaxy](https://galaxy.ansible.com/gantsign).
