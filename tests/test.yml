@@ -32,6 +32,10 @@
           atom_packages:
             - minimap
             - linter
+          atom_config:
+            "*":
+              core:
+                projectHome: "/home/vagrant/workspace"
         - username: test_usr2
           atom_packages: []
         - username: test_usr3

@@ -19,7 +19,7 @@ The following variables will change the behavior of this role (default values
 are shown below):
 
 ```yaml
-# Users to install packages for
+# Users to install packages for and/or write config.cson
 users: []
 ```
 
@@ -31,6 +31,7 @@ users:
     atom_packages:
       - # package 1
       - # package 2
+    atom_config: # The config (in YAML not CSON)
 ```
 
 Example Playbooks
@@ -44,7 +45,7 @@ Minimal playbook:
     - role: gantsign.atom
 ```
 
-Playbook with packages installed:
+Playbook with packages installed and config:
 
 ```yaml
 - hosts: servers
@@ -57,6 +58,13 @@ Playbook with packages installed:
             - linter
             - atom-beautify
             - file-icons
+          atom_config:
+            "*":
+              core:
+                projectHome: "/home/vagrant/workspace"
+              editor:
+                showIndentGuide: true
+                showInvisibles: true
 ```
 
 More Roles From GantSign
