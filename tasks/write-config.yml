@@ -1,0 +1,22 @@
+---
+- name: create config directory
+  become: yes
+  file:
+    path: '~{{ item.username }}/.atom'
+    state: directory
+    owner: '{{ item.username }}'
+    group: '{{ item.username }}'
+    mode: 'u=rwx,go='
+  with_items: '{{ users }}'
+
+- name: write config
+  become: yes
+  template:
+    src: config.cson.j2
+    dest: '~{{ item.username }}/.atom/config.cson'
+    force: no
+    owner: '{{ item.username }}'
+    group: '{{ item.username }}'
+    mode: 'u=rw,go='
+  with_items: '{{ users }}'
+  when: "item.atom_config is defined and item.atom_config not in ({}, '', None, omit)"

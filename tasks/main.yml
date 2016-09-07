@@ -3,3 +3,5 @@
 - include: install.yml
 
 - include: install-packages.yml
+
+- include: write-config.yml
