@@ -1,0 +1,17 @@
+---
+- name: ensure ca-certificates installed
+  become: yes
+  apt:
+    name: ca-certificates
+    state: present
+
+- name: add atom ppa
+  become: yes
+  apt_repository:
+    repo: 'ppa:webupd8team/atom'
+
+- name: install atom
+  become: yes
+  apt:
+    name: atom
+    state: present

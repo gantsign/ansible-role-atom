@@ -12,13 +12,51 @@ Requirements
 
 * Ubuntu
 
-Example Playbook
-----------------
+Role Variables
+--------------
+
+The following variables will change the behavior of this role (default values
+are shown below):
+
+```yaml
+# Users to install packages for
+users: []
+```
+
+Users are configured as follows:
+
+```yaml
+users:
+  - username: # Unix user name
+    atom_packages:
+      - # package 1
+      - # package 2
+```
+
+Example Playbooks
+-----------------
+
+Minimal playbook:
 
 ```yaml
 - hosts: servers
   roles:
     - role: gantsign.atom
+```
+
+Playbook with packages installed:
+
+```yaml
+- hosts: servers
+  roles:
+    - role: gantsign.atom
+      users:
+        - username: vagrant
+          atom_packages:
+            - minimap
+            - linter
+            - atom-beautify
+            - file-icons
 ```
 
 More Roles From GantSign

@@ -1,2 +1,3 @@
 ---
-# defaults file for atom
+# Users to install packages for
+users: []
