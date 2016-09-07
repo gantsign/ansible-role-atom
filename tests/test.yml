@@ -1,5 +1,37 @@
 ---
 - hosts: all
   remote_user: root
+
+  pre_tasks:
+    - name: create test_usr
+      become: yes
+      user:
+        name: test_usr
+        state: present
+        home: /home/test_usr
+        createhome: yes
+    - name: create test_usr2
+      become: yes
+      user:
+        name: test_usr2
+        state: present
+        home: /home/test_usr2
+        createhome: yes
+    - name: create test_usr3
+      become: yes
+      user:
+        name: test_usr3
+        state: present
+        home: /home/test_usr3
+        createhome: yes
+
   roles:
-    - ansible-role-atom
+    - role: ansible-role-atom
+      users:
+        - username: test_usr
+          atom_packages:
+            - minimap
+            - linter
+        - username: test_usr2
+          atom_packages: []
+        - username: test_usr3
