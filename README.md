@@ -18,7 +18,7 @@ Example Playbook
 ```yaml
 - hosts: servers
   roles:
-     - { role: gantsign.atom }
+    - role: gantsign.atom
 ```
 
 More Roles From GantSign
