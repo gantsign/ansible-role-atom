@@ -10,6 +10,7 @@ Role to install the [atom.io](https://atom.io) text editor by GitHub.
 Requirements
 ------------
 
+* Ansible >= 2.0
 * Ubuntu
 
 Role Variables
