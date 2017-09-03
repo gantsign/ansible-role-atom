@@ -1,3 +1,6 @@
 ---
 # Users to install packages for and/or write config.cson
 users: []
+
+# Should the config file be overwritten everytime the playbook is run
+atom_overwrite_config: no
