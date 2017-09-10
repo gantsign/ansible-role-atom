@@ -14,8 +14,8 @@
   template:
     src: config.cson.j2
     dest: '~{{ item.username }}/.atom/config.cson'
-    force: '{{ atom_overwrite_config }}'
-    backup: '{{ atom_overwrite_config }}'
+    force: '{{ item.atom_config_overwrite | default(False) }}'
+    backup: '{{ item.atom_config_overwrite | default(False) }}'
     owner: '{{ item.username }}'
     group: '{{ item.username }}'
     mode: 'u=rw,go='
