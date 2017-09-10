@@ -14,6 +14,31 @@
         - test_usr
         - test_usr2
         - test_usr3
+        - test_usr4
+        - test_usr5
+    - name: create config directories
+      become: yes
+      file:
+        path: '~{{ item }}/.atom'
+        state: directory
+        owner: '{{ item }}'
+        group: '{{ item }}'
+        mode: 'u=rwx,go='
+      with_items:
+        - test_usr4
+        - test_usr5
+    - name: create existing config files
+      become: yes
+      copy:
+        content: Existing config
+        dest: '/home/{{ item }}/.atom/config.cson'
+        owner: '{{ item }}'
+        group: '{{ item }}'
+        mode: 'u=rw,go='
+        force: no
+      with_items:
+        - test_usr4
+        - test_usr5
 
   roles:
     - role: ansible-role-atom
@@ -29,3 +54,14 @@
         - username: test_usr2
           atom_packages: []
         - username: test_usr3
+        - username: test_usr4
+          atom_config:
+            "*":
+              core:
+                projectHome: "/home/vagrant/workspace"
+        - username: test_usr5
+          atom_config:
+            "*":
+              core:
+                projectHome: "/home/vagrant/workspace"
+          atom_config_overwrite: yes
