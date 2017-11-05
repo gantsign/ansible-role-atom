@@ -5,7 +5,6 @@
     path: '~{{ item.username }}/.atom'
     state: directory
     owner: '{{ item.username }}'
-    group: '{{ item.username }}'
     mode: 'u=rwx,go='
   with_items: '{{ users }}'
 
@@ -17,7 +16,6 @@
     force: '{{ item.atom_config_overwrite | default(False) }}'
     backup: '{{ item.atom_config_overwrite | default(False) }}'
     owner: '{{ item.username }}'
-    group: '{{ item.username }}'
     mode: 'u=rw,go='
   with_items: '{{ users }}'
   when: "item.atom_config is defined and item.atom_config not in ({}, '', None, omit)"
