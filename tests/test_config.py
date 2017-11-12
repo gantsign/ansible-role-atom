@@ -9,7 +9,6 @@ def test_config(File):
     assert config_file.exists
     assert config_file.is_file
     assert config_file.user == 'test_usr'
-    assert config_file.group == 'test_usr'
     assert oct(config_file.mode) == '0600'
     assert config_file.contains('"projectHome": "/home/vagrant/workspace"')
 
@@ -20,7 +19,6 @@ def test_perserve_config(File):
     assert config_file.exists
     assert config_file.is_file
     assert config_file.user == 'test_usr4'
-    assert config_file.group == 'test_usr4'
     assert oct(config_file.mode) == '0600'
     assert config_file.contains('Existing config')
 
@@ -31,7 +29,6 @@ def test_overwrite_config(Command, File):
     assert config_file.exists
     assert config_file.is_file
     assert config_file.user == 'test_usr5'
-    assert config_file.group == 'test_usr5'
     assert oct(config_file.mode) == '0600'
     assert config_file.contains('"projectHome": "/home/vagrant/workspace"')
 
