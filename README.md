@@ -33,7 +33,7 @@ users:
       - # package 1
       - # package 2
     atom_config: # The config (in YAML not CSON)
-    atom_config_overwrite: yes # By defult the config file will not be overwritten
+    atom_config_overwrite: yes # By default the config file will not be overwritten
 ```
 
 Example Playbooks
