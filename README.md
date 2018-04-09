@@ -61,9 +61,9 @@ Playbook with packages installed and config:
             - atom-beautify
             - file-icons
           atom_config:
-            "*":
+            '*':
               core:
-                projectHome: "/home/vagrant/workspace"
+                projectHome: '/home/vagrant/workspace'
               editor:
                 showIndentGuide: true
                 showInvisibles: true

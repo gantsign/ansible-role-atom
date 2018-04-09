@@ -1,13 +1,13 @@
 ---
 - name: install packages
   become: yes
-  become_user: "{{ item.0.username }}"
+  become_user: '{{ item.0.username }}'
   shell: >
     apm list --bare | grep -E '^{{ item.1 }}@'
     && echo 'Already installed.'
     || apm install '{{ item.1 }}'
   with_subelements:
-    - "{{ users }}"
+    - '{{ users }}'
     - atom_packages
     - skip_missing: yes
   register: apm_result

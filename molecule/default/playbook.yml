@@ -48,20 +48,20 @@
             - minimap
             - linter
           atom_config:
-            "*":
+            '*':
               core:
-                projectHome: "/home/vagrant/workspace"
+                projectHome: '/home/vagrant/workspace'
         - username: test_usr2
           atom_packages: []
         - username: test_usr3
         - username: test_usr4
           atom_config:
-            "*":
+            '*':
               core:
-                projectHome: "/home/vagrant/workspace"
+                projectHome: '/home/vagrant/workspace'
         - username: test_usr5
           atom_config:
-            "*":
+            '*':
               core:
-                projectHome: "/home/vagrant/workspace"
+                projectHome: '/home/vagrant/workspace'
           atom_config_overwrite: yes
