@@ -11,6 +11,6 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     'minimap',
     'linter'
 ])
-def test_packages(Command, atom_package):
+def test_packages(host, atom_package):
     cmd = 'sudo --user test_usr -H apm list --bare | grep -E %s'
-    assert Command(cmd, '^' + atom_package + '@').rc == 0
+    assert host.run(cmd, '^' + atom_package + '@').rc == 0
