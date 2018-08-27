@@ -1,8 +1,22 @@
 ---
-- name: add atom ppa
+- name: install apt-transport-https
+  become: yes
+  apt:
+    name: apt-transport-https
+    state: present
+
+- name: install apt key
+  become: yes
+  apt_key:
+    url: 'https://packagecloud.io/AtomEditor/atom/gpgkey'
+    state: present
+
+- name: install atom repo
   become: yes
   apt_repository:
-    repo: 'ppa:webupd8team/atom'
+    repo: deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main
+    filename: atom
+    state: present
 
 - name: install atom
   become: yes
