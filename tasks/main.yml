@@ -1,7 +1,7 @@
 ---
 
-- include: install.yml
+- import_tasks: install.yml
 
-- include: install-packages.yml
+- import_tasks: install-packages.yml
 
-- include: write-config.yml
+- import_tasks: write-config.yml
