@@ -2,10 +2,13 @@
 - name: install packages
   become: yes
   become_user: '{{ item.0.username }}'
-  shell: >
-    apm list --bare | grep -E '^{{ item.1 }}@'
-    && echo 'Already installed.'
-    || apm install '{{ item.1 }}'
+  shell: |
+    set -euo pipefail
+    apm list --bare | grep -E '^{{ item.1 }}@' &&
+    echo 'Already installed.' ||
+    apm install '{{ item.1 }}'
+  args:
+    executable: /bin/bash
   with_subelements:
     - '{{ users }}'
     - atom_packages
