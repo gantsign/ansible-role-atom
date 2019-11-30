@@ -24,4 +24,5 @@
   with_items: '{{ users }}'
   loop_control:
     loop_var: user
+    label: '{{ user.username }}'
   when: "user.atom_config is defined and user.atom_config not in ({}, '', None, omit)"
