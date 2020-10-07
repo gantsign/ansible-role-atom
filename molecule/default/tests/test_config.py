@@ -13,7 +13,7 @@ def test_config(host):
     assert config_file.is_file
     assert config_file.user == 'test_usr'
     assert config_file.group == 'test_usr'
-    assert oct(config_file.mode) == '0600'
+    assert oct(config_file.mode) == '0o600'
     assert config_file.contains('"projectHome": "/home/vagrant/workspace"')
 
 
@@ -24,7 +24,7 @@ def test_perserve_config(host):
     assert config_file.is_file
     assert config_file.user == 'test_usr4'
     assert config_file.group == 'test_usr4'
-    assert oct(config_file.mode) == '0600'
+    assert oct(config_file.mode) == '0o600'
     assert config_file.contains('Existing config')
 
 
@@ -35,7 +35,7 @@ def test_overwrite_config(host):
     assert config_file.is_file
     assert config_file.user == 'test_usr5'
     assert config_file.group == 'test_usr5'
-    assert oct(config_file.mode) == '0600'
+    assert oct(config_file.mode) == '0o600'
     assert config_file.contains('"projectHome": "/home/vagrant/workspace"')
 
     backup_path = host.check_output('find %s | grep --color=never -E %s',
@@ -44,5 +44,5 @@ def test_overwrite_config(host):
     backup_file = host.file(backup_path)
 
     assert backup_file.is_file
-    assert oct(backup_file.mode) == '0600'
+    assert oct(backup_file.mode) == '0o600'
     assert backup_file.contains('Existing config')
