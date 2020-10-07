@@ -1,8 +1,10 @@
 ---
-- name: install apt-transport-https
+- name: install dependencies
   become: yes
   apt:
-    name: apt-transport-https
+    name:
+      - apt-transport-https
+      - gnupg2
     state: present
 
 - name: install apt key
