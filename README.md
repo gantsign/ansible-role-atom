@@ -1,7 +1,7 @@
 Ansible Role: Atom
 ==================
 
-[![Build Status](https://travis-ci.org/gantsign/ansible-role-atom.svg?branch=master)](https://travis-ci.org/gantsign/ansible-role-atom)
+[![Build Status](https://travis-ci.com/gantsign/ansible-role-atom.svg?branch=master)](https://travis-ci.com/gantsign/ansible-role-atom)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.atom-blue.svg)](https://galaxy.ansible.com/gantsign/atom)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible-role-atom/master/LICENSE)
 
