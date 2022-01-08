@@ -18,7 +18,6 @@ Requirements
 
         * Ubuntu
 
-            * Trusty (14.04)
             * Xenial (16.04)
             * Bionic (18.04)
             * Focal (20.04)
