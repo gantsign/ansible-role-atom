@@ -11,6 +11,7 @@ galaxy_info:
         - trusty
         - xenial
         - bionic
+        - focal
   galaxy_tags:
     - atom
     - editor
