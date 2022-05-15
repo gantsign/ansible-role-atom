@@ -1,7 +1,7 @@
 Ansible Role: Atom
 ==================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible-role-atom.svg?branch=master)](https://travis-ci.com/gantsign/ansible-role-atom)
+[![Tests](https://github.com/gantsign/ansible-role-atom/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible-role-atom/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.atom-blue.svg)](https://galaxy.ansible.com/gantsign/atom)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible-role-atom/master/LICENSE)
 
@@ -10,7 +10,7 @@ Role to install the [atom.io](https://atom.io) text editor by GitHub.
 Requirements
 ------------
 
-* Ansible >= 2.8
+* Ansible >= 2.9
 
 * Linux Distribution
 
@@ -18,9 +18,8 @@ Requirements
 
         * Ubuntu
 
-            * Trusty (14.04)
-            * Xenial (16.04)
             * Bionic (18.04)
+            * Focal (20.04)
 
         * Note: other versions are likely to work but have not been tested.
 
